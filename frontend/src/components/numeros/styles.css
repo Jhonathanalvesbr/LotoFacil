@@ -1,0 +1,101 @@
+h3 {
+    display: flex;
+    margin-left: 15px;
+    height: 50px;
+    color: #0066b3;
+    font-size: 25px;
+}
+
+li {
+    margin-top: 5px;
+    display: block;
+    color: #fff;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    position: relative;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.tabela {
+    display: inline-block;
+    margin: 5px;
+}
+
+.tabela.acerto{
+    border: 4px solid green;
+}
+
+li a {
+    background: #adc0c4;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-display: swap;
+    font-size: 20px;
+    line-height: 50px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+}
+
+
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    max-width: 360px;
+    margin-top: 0px;
+}
+
+ul li a.marcar {
+    background-color: #7f3992;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-display: swap;
+    font-size: 20px;
+    line-height: 50px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+}
+
+label {
+    margin-left: 25px;
+    margin-bottom: 5px;
+}
+
+
+ul li a.acerto {
+    background-color: green;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-display: swap;
+    font-size: 20px;
+    line-height: 50px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+}
+
+.entrada {
+    margin-left: 25px;
+    max-width: 320px;
+}
