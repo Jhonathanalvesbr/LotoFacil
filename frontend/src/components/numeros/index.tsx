@@ -6,32 +6,37 @@ import { Concurso } from '../models/concuros';
 import { UltimoSorteio } from '../models/ultimoSorteio';
 function Numeros() {
 
-    const [concursos, setConcurso] = useState<Concurso[]>([]);
+    const [concursoAtual, setConcurso] = useState<Concurso[]>([]);
 
     const [ultimoSorteio, setUltimoSorteio] = useState<UltimoSorteio>();
-
+    const concurso = 2637;
 
     useEffect(() => {
         axios.get("https://634878ec0484786c6e9a6ae3.mockapi.io/numero/numero")
             .then(r => setConcurso(r.data));
         axios.get("https://servicebus2.caixa.gov.br/portaldeloterias/api/lotofacil/")
-            .then(r => setUltimoSorteio(r.data));
-            
+            .then(r => {
+                if (r.data.numero === concurso) {
+                    setUltimoSorteio(r.data)
+                }
+            }
+            );
+
     }, []);
 
     return (
+
         <>
-        
-            <h3>Concurso: 2637</h3>
+            <h3>Concurso: {concurso}</h3>
             {
-                concursos.map(concurso => {
-                    return ( 
+                concursoAtual.map(concurso => {
+                    return (
                         <>
-                            <div key={concurso.id} className={`${concurso.jogo.sort().filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => +r).includes(+r) ).length >= 11 ? "acerto tabela" : "tabela"}`}>
+                            <div key={concurso.id} className={`${concurso.jogo.sort().filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => +r).includes(+r)).length >= 11 ? "acerto tabela" : "tabela"}`}>
                                 <h3>Jogo: {concurso.id} </h3>
                                 <ul className="escolhe-numero-lotofacil">
                                     <li >
-                                        <a className={`${concurso.jogo.includes(1) ? "marcar" : "" }`}>01</a>
+                                        <a className={`${concurso.jogo.includes(1) ? "marcar" : ""}`}>01</a>
                                     </li>
                                     <li>
                                         <a className={`${concurso.jogo.includes(2) ? "marcar" : ""}`}>02</a>
@@ -106,13 +111,13 @@ function Numeros() {
                                         <a className={`${concurso.jogo.includes(25) ? "marcar" : ""}`}>25</a>
                                     </li>
                                 </ul>
-                                <label>Numeros acertados: {concurso.jogo.sort().filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => +r).includes(+r) ).length}</label>
+                                <label>Numeros acertados: {concurso.jogo.sort().filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => +r).includes(+r)).length}</label>
                                 <div className="input-group input-group-sm mb-3">
-                                    <input type="text" placeholder={concurso.jogo.sort().filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => +r).includes(+r) ).toString().replaceAll(",", ", ")} className="form-control entrada" aria-label="Small"
+                                    <input type="text" placeholder={concurso.jogo.sort().filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => +r).includes(+r)).toString().replaceAll(",", ", ")} className="form-control entrada" aria-label="Small"
                                         aria-describedby="inputGroup-sizing-sm" disabled />
                                 </div>
-                                
-                               
+
+
 
                             </div></>
                     )
