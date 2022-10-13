@@ -1,5 +1,5 @@
 
-  export type ListaMunicipioUfganhadore {
+  export type ListaMunicipioUfganhadore ={
     ganhadores: number
     municipio: string
     nomeFatansiaUL: string

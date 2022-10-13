@@ -1,5 +1,5 @@
   
-  export type ListaRateioPremio {
+  export type ListaRateioPremio ={
     descricaoFaixa: string
     faixa: number
     numeroDeGanhadores: number
