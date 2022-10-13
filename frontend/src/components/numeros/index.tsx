@@ -16,9 +16,11 @@ function Numeros() {
             .then(r => setConcurso(r.data));
         axios.get("https://servicebus2.caixa.gov.br/portaldeloterias/api/lotofacil/")
             .then(r => {
+
                 if (r.data.numero === concurso) {
                     setUltimoSorteio(r.data)
                 }
+
             }
             );
 
@@ -28,6 +30,8 @@ function Numeros() {
 
         <>
             <h3>Concurso: {concurso}</h3>
+            <h3>Dezenas Sorteadas: {(concurso == ultimoSorteio?.numero) ? ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => r).sort().toString().replaceAll(",", ", ") : "Aguardando"} </h3>
+
             {
                 concursoAtual.map(concurso => {
                     return (
