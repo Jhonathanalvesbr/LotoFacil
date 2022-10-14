@@ -1,5 +1,4 @@
 h3 {
-    margin-top: 10px;
     display: flex;
     margin-left: 15px;
     height: 55px;
@@ -9,9 +8,8 @@ h3 {
 }
 
 h2 {
-    margin-top: 0px;
     margin-left: 15px;
-    height: 60px;
+    height: 80px;
     color: #0066b3;
 }
 
