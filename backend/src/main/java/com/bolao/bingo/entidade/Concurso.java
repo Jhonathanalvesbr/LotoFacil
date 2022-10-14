@@ -15,6 +15,8 @@ import java.util.List;
 public class Concurso {
     @Id
     private int concurso;
+    @ElementCollection
+    private List<Integer> resultado;
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Jogo> jogos;
 }

@@ -12,5 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 public class ConcursoDTO {
     private int concurso;
+    private List<Integer> resultado;
     private List<JogoDTO> jogos;
 }
