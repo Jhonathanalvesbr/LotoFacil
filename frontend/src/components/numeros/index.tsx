@@ -115,7 +115,7 @@ function Numeros() {
                                         <a className={`${concurso.jogo.includes(25) ? "marcar" : ""}`}>25</a>
                                     </li>
                                 </ul>
-                                <label>Numeros acertados: {concurso.jogo.sort().filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => +r).includes(+r)).length}</label>
+                                <label>Números acertados: {concurso.jogo.sort().filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => +r).includes(+r)).length}</label>
                                 <div className="input-group input-group-sm mb-3">
                                     <input type="text" placeholder={concurso.jogo.sort().filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => +r).includes(+r)).toString().replaceAll(",", ", ")} className="form-control entrada" aria-label="Small"
                                         aria-describedby="inputGroup-sizing-sm" disabled />
