@@ -30,13 +30,13 @@ function Numeros() {
 
         <>
             <h3>Concurso: {concurso}</h3>
-            <h2>Dezenas Sorteadas: {(concurso == ultimoSorteio?.numero) ? ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => parseInt(r)).sort((a,b) => +a-b).toString().replaceAll(",", ", ") : "Aguardando"} </h2>
+            <h2>Dezenas Sorteadas: {(concurso == ultimoSorteio?.numero) ? ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => parseInt(r)).sort((a, b) => +a - b).toString().replaceAll(",", ", ") : "Aguardando"} </h2>
 
             {
                 concursoAtual.map(concurso => {
                     return (
                         <>
-                            <div key={concurso.id} className={`${concurso.jogo.sort((a,b) => a-b).filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => parseInt(r)).includes(+r)).length >= 11 ? "acerto tabela" : "tabela"}`}>
+                            <div key={concurso.id} className={`${concurso.jogo.sort((a, b) => a - b).filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => parseInt(r)).includes(+r)).length >= 11 ? "acerto tabela" : "tabela"}`}>
                                 <h3>Jogo: {concurso.id} </h3>
                                 <ul className="escolhe-numero-lotofacil">
                                     <li >
@@ -115,9 +115,9 @@ function Numeros() {
                                         <a className={`${concurso.jogo.includes(25) ? "marcar" : ""}`}>25</a>
                                     </li>
                                 </ul>
-                                <label>Números acertados: {concurso.jogo.sort((a,b) => a-b).filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => parseInt(r)).includes(+r)).length}</label>
+                                <label>Números acertados: {concurso.jogo.sort((a, b) => a - b).filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => parseInt(r)).includes(+r)).length}</label>
                                 <div className="input-group input-group-sm mb-3">
-                                    <input type="text" placeholder={concurso.jogo.sort((a,b) => a-b).filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => parseInt(r)).includes(+r)).toString().replaceAll(",", ", ")} className="form-control entrada" aria-label="Small"
+                                    <input type="text" placeholder={concurso.jogo.sort((a, b) => a - b).filter(r => ultimoSorteio?.dezenasSorteadasOrdemSorteio.map(r => parseInt(r)).includes(+r)).toString().replaceAll(",", ", ")} className="form-control entrada" aria-label="Small"
                                         aria-describedby="inputGroup-sizing-sm" disabled />
                                 </div>
 
