@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest
@@ -26,10 +27,10 @@ public class TesteEntidade {
             numero.add(3);
 
 
-            Jogo jogo = new Jogo(1L, 1,numero);
+            Jogo jogo = new Jogo(1L, Arrays.asList(1, 2, 3));
             List<Jogo> jogos = new ArrayList<>();
             jogos.add(jogo);
-            Concurso concurso = new Concurso( 3036,1, jogos);
+            Concurso concurso = new Concurso( 3036,Arrays.asList(1, 2, 3),jogos);
             ConcursoDTO concursoDTO = concursoMapper.toDTO(concurso);
 
 
