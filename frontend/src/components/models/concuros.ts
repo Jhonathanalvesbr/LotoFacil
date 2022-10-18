@@ -1,4 +1,7 @@
+import { Jogos } from "./jogos";
+
 export type Concurso = {
-    id: number;
-    jogo: number[];
+    concurso: number;
+    resultado:number[];
+    jogos: Jogos[];
 }

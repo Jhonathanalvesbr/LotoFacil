@@ -78,7 +78,9 @@ public class ConcursoServico {
             Response response = client.newCall(request).execute();
             Gson gson = new Gson();
             LotoFacilDTO lotoFacilDTO = gson.fromJson(response.body().string(), LotoFacilDTO.class);
-            concurso.setResultado(lotoFacilDTO.getDezenasSorteadasOrdemSorteio().stream().map(n -> Integer.parseInt(n)).sorted((o1, o2) -> o1 - o2).collect(Collectors.toList()));
+            if(concurso.getConcurso() == lotoFacilDTO.getNumero()){
+                concurso.setResultado(lotoFacilDTO.getDezenasSorteadasOrdemSorteio().stream().map(n -> Integer.parseInt(n)).sorted((o1, o2) -> o1 - o2).collect(Collectors.toList()));
+            }
         }
 
 
@@ -86,8 +88,22 @@ public class ConcursoServico {
         return concursoMapper.toDTO(concurso);
     }
 
-    public List<ConcursoDTO> getConcursos() {
-        return concursoRepositorio.findAll().stream().map(concurso -> concursoMapper.toDTO(concurso)).collect(Collectors.toList());
+    public List<ConcursoDTO> getConcursos() throws IOException {
+        List<Concurso> concursos =  concursoRepositorio.findAll();
+        for (Concurso concurso:concursos) {
+            if (concurso.getResultado() == null || concurso.getResultado().size() == 0) {
+                OkHttpClient client = getUnsafeOkHttpClient();
+                Request request = new Request.Builder().url("https://servicebus2.caixa.gov.br/portaldeloterias/api/lotofacil/").build(); // defaults to GET
+                Response response = client.newCall(request).execute();
+                Gson gson = new Gson();
+                LotoFacilDTO lotoFacilDTO = gson.fromJson(response.body().string(), LotoFacilDTO.class);
+                if(concurso.getConcurso() == lotoFacilDTO.getNumero()){
+                    concurso.setResultado(lotoFacilDTO.getDezenasSorteadasOrdemSorteio().stream().map(n -> Integer.parseInt(n)).sorted((o1, o2) -> o1 - o2).collect(Collectors.toList()));
+                    concurso = concursoRepositorio.save(concurso);
+                }
+            }
+        }
+        return concursos.stream().map(concurso -> concursoMapper.toDTO(concurso)).collect(Collectors.toList());
     }
 
     public ConcursoDTO getConcurso(Integer id) {

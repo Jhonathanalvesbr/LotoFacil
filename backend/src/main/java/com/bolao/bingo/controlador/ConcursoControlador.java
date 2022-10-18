@@ -15,7 +15,7 @@ public class ConcursoControlador {
     ConcursoServico concursoServico;
 
     @GetMapping
-    public List<ConcursoDTO> getConcursos(){
+    public List<ConcursoDTO> getConcursos() throws IOException {
         return concursoServico.getConcursos();
     }
 
