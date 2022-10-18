@@ -13,7 +13,7 @@ function Numeros() {
     c = 0;
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/v1/lotofacil")
+        axios.get("http://3.92.191.160/api/v1/lotofacil")
             .then(r => { setConcurso(r.data); setPosicao(r.data.length-1)});
     }, []);
 
