@@ -11,9 +11,9 @@ function Numeros() {
     const [posicao, setPosicao] = useState<number>(0);
     let c: number;
     c = 0;
-
+    axios.defaults.baseURL = 'http://ec2-18-207-216-194.compute-1.amazonaws.com:8080';
     useEffect(() => {
-        axios.get("http://ec2-3-92-191-160.compute-1.amazonaws.com:8080/api/v1/lotofacil")
+        axios.get("/api/v1/lotofacil")
             .then(r => { setConcurso(r.data); setPosicao(r.data.length-1)});
     }, []);
 
