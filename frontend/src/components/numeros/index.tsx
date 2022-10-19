@@ -9,12 +9,11 @@ function Numeros() {
 
     const [concursoAtual, setConcurso] = useState<Concurso[]>([]);
     const [posicao, setPosicao] = useState<number>(0);
-    let c: number;
-    c = 0;
+    let c = 0;
 
     
     useEffect(() => {
-        axios.defaults.baseURL = 'http://ec2-44-202-251-154.compute-1.amazonaws.com:8080';
+        axios.defaults.baseURL = 'http://189.41.167.126:8080';
         axios.get("/api/v1/lotofacil")
             .then(r => { setConcurso(r.data); setPosicao(r.data.length-1)});
     }, []);
