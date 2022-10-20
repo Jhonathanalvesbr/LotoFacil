@@ -11,14 +11,12 @@ function Numeros() {
     const [posicao, setPosicao] = useState<number>(0);
     let c = 0;
 
-    const baseurl = "https://cors-anywhere.herokuapp.com/http://44.211.166.104:8080/api/v1/";
+    
     useEffect(() => {
-        axios.get(`${baseurl}lotofacil`)
-            .then(r => { setConcurso(r.data); setPosicao(r.data.length - 1); });
+        axios.defaults.baseURL = 'https://xfxhnia2oc.execute-api.us-east-1.amazonaws.com/';
+        axios.get("api")
+            .then(r => { setConcurso(r.data); setPosicao(r.data.length-1)});
     }, []);
-
-
-
 
     return (
         <><h3>Concurso: <>
@@ -34,8 +32,8 @@ function Numeros() {
                         <>
 
                             <div key={c} className={`${concurso?.numeros.sort((a, b) => a - b).filter(r => concursoAtual[posicao]?.resultado.includes(+r)).length >= 11 ? "acerto tabela" : "tabela"}`}>
-
-                                <h3>Jogo: {c += 1} </h3>
+                                
+                                <h3>Jogo: {c +=1} </h3>
                                 <ul className="escolhe-numero-lotofacil">
                                     <li >
                                         <a className={`${concurso?.numeros.includes(1) ? "marcar" : ""}`}>01</a>
