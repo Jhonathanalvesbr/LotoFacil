@@ -13,8 +13,8 @@ function Numeros() {
 
     
     useEffect(() => {
-        axios.defaults.baseURL = 'http://189.41.167.126:8080';
-        axios.get("/api/v1/lotofacil")
+        axios.defaults.baseURL = 'https://0skmbfr6p9.execute-api.us-east-1.amazonaws.com/lotofacil';
+        axios.get("")
             .then(r => { setConcurso(r.data); setPosicao(r.data.length-1)});
     }, []);
 
