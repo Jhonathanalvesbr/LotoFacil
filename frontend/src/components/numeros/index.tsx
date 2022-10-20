@@ -11,15 +11,10 @@ function Numeros() {
     const [posicao, setPosicao] = useState<number>(0);
     let c = 0;
 
-    `[[redirects]]
-    from = "/cors-proxy/*"
-    to = ":splat"
-    status = 200
-    force = true`
-
+    const baseurl = "http://44.211.166.104:8080/api/v1/";
     useEffect(() => {
-        axios.get(`/cors-proxy/https://0skmbfr6p9.execute-api.us-east-1.amazonaws.com/lotofacil`)
-            .then(r => { setConcurso(r.data); setPosicao(r.data.length - 1) });
+        axios.get(`${baseurl}lotofacil`)
+            .then(r => { setConcurso(r.data); setPosicao(r.data.length - 1); });
     }, []);
 
 
