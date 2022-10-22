@@ -7,7 +7,7 @@ services:
       - 8080:8080
     depends_on:
       mysqldb: 
-        condition: service_completed_successfully
+        condition: healthcheck
     
   mysqldb:
     image: mysql
@@ -17,3 +17,5 @@ services:
     environment:
       MYSQL_DATABASE: bolao
       MYSQL_ROOT_PASSWORD: root
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u root --password=root
