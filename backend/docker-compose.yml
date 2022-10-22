@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 services:
   service:
     build: .
@@ -7,7 +7,7 @@ services:
       - 8080:8080
     depends_on:
       mysqldb: 
-        condition: service_healthy
+        condition: service_completed_successfully
     
   mysqldb:
     image: mysql
@@ -17,5 +17,3 @@ services:
     environment:
       MYSQL_DATABASE: bolao
       MYSQL_ROOT_PASSWORD: root
-    healthcheck:
-        test: "exit 0"
