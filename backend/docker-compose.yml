@@ -1,12 +1,14 @@
 version: "3.8"
 services:
-  server:
+  service:
     build: .
     restart: always
     ports:
       - 8080:8080
     depends_on:
-      - mysqldb
+      mysqldb: 
+        condition: service_healthy
+    
   mysqldb:
     image: mysql
     restart: always
@@ -15,3 +17,5 @@ services:
     environment:
       MYSQL_DATABASE: bolao
       MYSQL_ROOT_PASSWORD: root
+    healthcheck:
+        test: "exit 0"
