@@ -7,8 +7,8 @@ services:
       - 8080:8080
     depends_on:
       mysqldb: 
-        condition: service_completed_successfully
-    
+        condition: service_healthy 
+        
   mysqldb:
     image: mysql
     restart: always
@@ -17,4 +17,8 @@ services:
     environment:
       MYSQL_DATABASE: bolao
       MYSQL_ROOT_PASSWORD: root
-    
+    healthcheck:
+      test: "mysql --user=root --password=root --execute \"create database if not exists bolao;\""
+      interval: 2s
+      timeout: 20s
+      retries: 10
