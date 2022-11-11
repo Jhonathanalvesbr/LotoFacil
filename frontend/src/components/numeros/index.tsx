@@ -19,12 +19,16 @@ function Numeros() {
                     for (var j = 0; j < r.data[i].jogos.length; j++) {
                         r.data[i].jogos[j]['score'] = r.data[i].jogos[j].numeros.sort((a: any, b: any) => a - b).filter((n: any) => r.data[i].resultado.includes(+n)).length;
                     }
-                    r.data[i].jogos.sort(function (a : any, b : any) {
+                    r.data[i].jogos.sort(function (a: any, b: any) {
                         return b.score - a.score
                     });
                 }
+                r.data.sort(function (a: any, b: any) {
+                    return b.concurso - a.concurso
+                });
 
-                setConcurso(r.data); setPosicao(r.data.length - 1)
+                setConcurso(r.data);
+                setPosicao(0);
             });
 
     }, []);
