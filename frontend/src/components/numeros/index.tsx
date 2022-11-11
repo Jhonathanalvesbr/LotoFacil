@@ -11,11 +11,24 @@ function Numeros() {
     const [posicao, setPosicao] = useState<number>(0);
     let c = 0;
 
-    
+
+
     useEffect(() => {
         axios.defaults.baseURL = 'https://xfxhnia2oc.execute-api.us-east-1.amazonaws.com/';
         axios.get("api")
-            .then(r => { setConcurso(r.data); setPosicao(r.data.length-1)});
+            .then(r => {
+                for (var i = 0; i < r.data.length; i++) {
+                    for (var j = 0; j < r.data[i].jogos.length; j++) {
+                        r.data[i].jogos[j]['score'] = r.data[i].jogos[j].numeros.sort((a: any, b: any) => a - b).filter((n: any) => r.data[i].resultado.includes(+n)).length;
+                    }
+                    r.data[i].jogos.sort(function (a : any, b : any) {
+                        return b.score - a.score
+                    });
+                }
+
+                setConcurso(r.data); setPosicao(r.data.length - 1)
+            });
+
     }, []);
 
     return (
@@ -32,8 +45,8 @@ function Numeros() {
                         <>
 
                             <div key={c} className={`${concurso?.numeros.sort((a, b) => a - b).filter(r => concursoAtual[posicao]?.resultado.includes(+r)).length >= 11 ? "acerto tabela" : "tabela"}`}>
-                                
-                                <h3>Jogo: {c +=1} </h3>
+
+                                <h3>Jogo: {c += 1} </h3>
                                 <ul className="escolhe-numero-lotofacil">
                                     <li >
                                         <a className={`${concurso?.numeros.includes(1) ? "marcar" : ""}`}>01</a>
