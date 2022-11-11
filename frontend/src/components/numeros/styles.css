@@ -39,6 +39,9 @@ button {
 button:hover {
     color: #0066b3;
 }
+ul li button.marcar:hover {
+    color: #0066b3;
+}
 
 li button {
     background: #adc0c4;
