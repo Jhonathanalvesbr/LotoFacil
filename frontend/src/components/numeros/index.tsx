@@ -11,8 +11,6 @@ function Numeros() {
     const [posicao, setPosicao] = useState<number>(0);
     let c = 0;
 
-
-
     useEffect(() => {
         axios.defaults.baseURL = 'https://xfxhnia2oc.execute-api.us-east-1.amazonaws.com/';
         axios.get("api")
@@ -49,79 +47,79 @@ function Numeros() {
                                 <h3>Jogo: {c += 1} </h3>
                                 <ul className="escolhe-numero-lotofacil">
                                     <li >
-                                        <a className={`${concurso?.numeros.includes(1) ? "marcar" : ""}`}>01</a>
+                                        <button className={`${concurso?.numeros.includes(1) ? "marcar" : ""}`}>01</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(2) ? "marcar" : ""}`}>02</a>
+                                        <button className={`${concurso?.numeros.includes(2) ? "marcar" : ""}`}>02</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(3) ? "marcar" : ""}`}>03</a>
+                                        <button className={`${concurso?.numeros.includes(3) ? "marcar" : ""}`}>03</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(4) ? "marcar" : ""}`}>04</a>
+                                        <button className={`${concurso?.numeros.includes(4) ? "marcar" : ""}`}>04</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(5) ? "marcar" : ""}`}>05</a>
+                                        <button className={`${concurso?.numeros.includes(5) ? "marcar" : ""}`}>05</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(6) ? "marcar" : ""}`}>06</a>
+                                        <button className={`${concurso?.numeros.includes(6) ? "marcar" : ""}`}>06</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(7) ? "marcar" : ""}`}>07</a>
+                                        <button className={`${concurso?.numeros.includes(7) ? "marcar" : ""}`}>07</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(8) ? "marcar" : ""}`}>08</a>
+                                        <button className={`${concurso?.numeros.includes(8) ? "marcar" : ""}`}>08</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(9) ? "marcar" : ""}`}>09</a>
+                                        <button className={`${concurso?.numeros.includes(9) ? "marcar" : ""}`}>09</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(10) ? "marcar" : ""}`}>10</a>
+                                        <button className={`${concurso?.numeros.includes(10) ? "marcar" : ""}`}>10</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(11) ? "marcar" : ""}`}>11</a>
+                                        <button className={`${concurso?.numeros.includes(11) ? "marcar" : ""}`}>11</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(12) ? "marcar" : ""}`}>12</a>
+                                        <button className={`${concurso?.numeros.includes(12) ? "marcar" : ""}`}>12</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(13) ? "marcar" : ""}`}>13</a>
+                                        <button className={`${concurso?.numeros.includes(13) ? "marcar" : ""}`}>13</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(14) ? "marcar" : ""}`}>14</a>
+                                        <button className={`${concurso?.numeros.includes(14) ? "marcar" : ""}`}>14</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(15) ? "marcar" : ""}`}>15</a>
+                                        <button className={`${concurso?.numeros.includes(15) ? "marcar" : ""}`}>15</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(16) ? "marcar" : ""}`}>16</a>
+                                        <button className={`${concurso?.numeros.includes(16) ? "marcar" : ""}`}>16</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(17) ? "marcar" : ""}`}>17</a>
+                                        <button className={`${concurso?.numeros.includes(17) ? "marcar" : ""}`}>17</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(18) ? "marcar" : ""}`}>18</a>
+                                        <button className={`${concurso?.numeros.includes(18) ? "marcar" : ""}`}>18</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(19) ? "marcar" : ""}`}>19</a>
+                                        <button className={`${concurso?.numeros.includes(19) ? "marcar" : ""}`}>19</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(20) ? "marcar" : ""}`}>20</a>
+                                        <button className={`${concurso?.numeros.includes(20) ? "marcar" : ""}`}>20</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(21) ? "marcar" : ""}`}>21</a>
+                                        <button className={`${concurso?.numeros.includes(21) ? "marcar" : ""}`}>21</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(22) ? "marcar" : ""}`}>22</a>
+                                        <button className={`${concurso?.numeros.includes(22) ? "marcar" : ""}`}>22</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(23) ? "marcar" : ""}`}>23</a>
+                                        <button className={`${concurso?.numeros.includes(23) ? "marcar" : ""}`}>23</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(24) ? "marcar" : ""}`}>24</a>
+                                        <button className={`${concurso?.numeros.includes(24) ? "marcar" : ""}`}>24</button>
                                     </li>
                                     <li>
-                                        <a className={`${concurso?.numeros.includes(25) ? "marcar" : ""}`}>25</a>
+                                        <button className={`${concurso?.numeros.includes(25) ? "marcar" : ""}`}>25</button>
                                     </li>
                                 </ul>
                                 <label>Números acertados: {concurso?.numeros.sort((a, b) => a - b).filter(r => concursoAtual[posicao]?.resultado.includes(+r)).length}</label>
