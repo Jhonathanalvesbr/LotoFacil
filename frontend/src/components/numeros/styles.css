@@ -32,9 +32,14 @@ li {
     border: 4px solid green;
 }
 
-button{
+button {
     border: 1px;
 }
+
+button:hover {
+    color: #0066b3;
+}
+
 li button {
     background: #adc0c4;
     border-radius: 50%;
