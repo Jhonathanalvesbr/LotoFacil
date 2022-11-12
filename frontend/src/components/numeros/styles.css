@@ -122,3 +122,7 @@ ul li button.acertou {
     align-items: center;
     justify-content: center;
 }
+
+ul li button.aguardando{
+    filter: brightness(1.0);
+}

@@ -53,79 +53,79 @@ function Numeros() {
                                 <h3>Jogo: {c += 1} </h3>
                                 <ul className="escolhe-numero-lotofacil">
                                     <li >
-                                        <button className={`${concurso?.numeros.includes(1) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(1) ? "acertou" : ""}`}>01</button>
+                                        <button className={`${concurso?.numeros.includes(1) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(1) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>01</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(2) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(2) ? "acertou" : ""}`}>02</button>
+                                        <button className={`${concurso?.numeros.includes(2) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(2) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>02</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(3) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(3) ? "acertou" : ""}`}>03</button>
+                                        <button className={`${concurso?.numeros.includes(3) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(3) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>03</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(4) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(4) ? "acertou" : ""}`}>04</button>
+                                        <button className={`${concurso?.numeros.includes(4) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(4) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>04</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(5) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(5) ? "acertou" : ""}`}>05</button>
+                                        <button className={`${concurso?.numeros.includes(5) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(5) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>05</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(6) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(6) ? "acertou" : ""}`}>06</button>
+                                        <button className={`${concurso?.numeros.includes(6) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(6) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>06</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(7) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(7) ? "acertou" : ""}`}>07</button>
+                                        <button className={`${concurso?.numeros.includes(7) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(7) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>07</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(8) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(8) ? "acertou" : ""}`}>08</button>
+                                        <button className={`${concurso?.numeros.includes(8) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(8) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>08</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(9) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(9) ? "acertou" : ""}`}>09</button>
+                                        <button className={`${concurso?.numeros.includes(9) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(9) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>09</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(10) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(10) ? "acertou" : ""}`}>10</button>
+                                        <button className={`${concurso?.numeros.includes(10) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(10) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>10</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(11) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(11) ? "acertou" : ""}`}>11</button>
+                                        <button className={`${concurso?.numeros.includes(11) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(11) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>11</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(12) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(12) ? "acertou" : ""}`}>12</button>
+                                        <button className={`${concurso?.numeros.includes(12) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(12) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>12</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(13) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(13) ? "acertou" : ""}`}>13</button>
+                                        <button className={`${concurso?.numeros.includes(13) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(13) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>13</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(14) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(14) ? "acertou" : ""}`}>14</button>
+                                        <button className={`${concurso?.numeros.includes(14) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(14) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>14</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(15) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(15) ? "acertou" : ""}`}>15</button>
+                                        <button className={`${concurso?.numeros.includes(15) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(15) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>15</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(16) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(16) ? "acertou" : ""}`}>16</button>
+                                        <button className={`${concurso?.numeros.includes(16) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(16) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>16</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(17) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(17) ? "acertou" : ""}`}>17</button>
+                                        <button className={`${concurso?.numeros.includes(17) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(17) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>17</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(18) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(18) ? "acertou" : ""}`}>18</button>
+                                        <button className={`${concurso?.numeros.includes(18) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(18) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>18</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(19) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(19) ? "acertou" : ""}`}>19</button>
+                                        <button className={`${concurso?.numeros.includes(19) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(19) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>19</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(20) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(20) ? "acertou" : ""}`}>20</button>
+                                        <button className={`${concurso?.numeros.includes(20) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(20) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>20</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(21) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(21) ? "acertou" : ""}`}>21</button>
+                                        <button className={`${concurso?.numeros.includes(21) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(21) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>21</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(22) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(22) ? "acertou" : ""}`}>22</button>
+                                        <button className={`${concurso?.numeros.includes(22) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(22) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>22</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(23) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(23) ? "acertou" : ""}`}>23</button>
+                                        <button className={`${concurso?.numeros.includes(23) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(23) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>23</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(24) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(24) ? "acertou" : ""}`}>24</button>
+                                        <button className={`${concurso?.numeros.includes(24) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(24) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>24</button>
                                     </li>
                                     <li>
-                                        <button className={`${concurso?.numeros.includes(25) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(25) ? "acertou" : ""}`}>25</button>
+                                        <button className={`${concurso?.numeros.includes(25) ? "marcar" : ""} ${concursoAtual[posicao]?.resultado.includes(25) ? "acertou" : ""} ${concursoAtual[posicao]?.resultado.length == 0 ? "aguardando" : ""}`}>25</button>
                                     </li>
                                 </ul>
                                 <label>Números acertados: {concurso?.numeros.sort((a, b) => a - b).filter(r => concursoAtual[posicao]?.resultado.includes(+r)).length}</label>
