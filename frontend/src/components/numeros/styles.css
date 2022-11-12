@@ -39,6 +39,7 @@ button {
 button:hover {
     color: #0066b3;
 }
+
 ul li button.marcar:hover {
     color: #0066b3;
 }
@@ -59,6 +60,8 @@ li button {
     text-decoration: none;
     width: 50px;
     height: 50px;
+    filter: brightness(1);
+
 }
 
 
@@ -87,6 +90,7 @@ ul li button.marcar {
     text-decoration: none;
     width: 50px;
     height: 50px;
+    filter: brightness(0.6);
 }
 
 label {
@@ -95,25 +99,26 @@ label {
 }
 
 
-ul li button.acerto {
-    background-color: green;
-    border-radius: 50%;
-    color: #fff;
-    cursor: pointer;
-    display: block;
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-display: swap;
-    font-size: 20px;
-    line-height: 50px;
-    padding: 0;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    width: 50px;
-    height: 50px;
+ul li button.acertou {
+    filter: brightness(1.0);
 }
 
 .entrada {
     margin-left: 25px;
     max-width: 320px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3rem;
+    justify-items: center;
+    
+
+}
+
+.centro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
