@@ -37,7 +37,7 @@ function Numeros() {
         <><div className='menu'> <h3 className='centro'>Concurso: 
             <Botao concursos={concursoAtual} posicao={[posicao, setPosicao]} />
         </h3><>
-                <h3 className='centro'>Acertos: {concursoAtual[posicao]?.jogos?.filter((j: any) => j['score'] > 10).length}</h3>
+                <h3 className='centro'>Acertos: {concursoAtual[posicao]?.resultado.length > 0 ? concursoAtual[posicao]?.jogos?.filter((j: any) => j['score'] > 10).length : "Aguardando"}</h3>
             </>
         </div>
             <h2>Dezenas Sorteadas: {(concursoAtual[posicao]?.resultado.length > 0) ? concursoAtual[posicao]?.resultado.sort((a, b) => +a - b).toString().replaceAll(",", ", ") : "Aguardando"} </h2>
