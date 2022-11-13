@@ -108,21 +108,29 @@ ul li button.acertou {
     max-width: 320px;
 }
 
-.menu{
+.menu {
     display: flex;
     justify-content: space-between;
     padding-right: 3rem;
     justify-items: center;
-    
+
 
 }
 
-.centro{
+.centro {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-ul li button.aguardando{
+ul li button.aguardando {
     filter: brightness(1.0);
+}
+
+.centroDIV {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }

@@ -34,21 +34,24 @@ function Numeros() {
     }, []);
 
     return (
-        <><div className='menu'> <h3 className='centro'>Concurso: 
+        <><div className=''>
+            <div className='menu '> <h3 className='centro'>Concurso: 
             <Botao concursos={concursoAtual} posicao={[posicao, setPosicao]} />
         </h3><>
                 <h3 className='centro'>Acertos: {concursoAtual[posicao]?.resultado.length > 0 ? concursoAtual[posicao]?.jogos?.filter((j: any) => j['score'] > 10).length : "Aguardando"}</h3>
             </>
         </div>
             <h2>Dezenas Sorteadas: {(concursoAtual[posicao]?.resultado.length > 0) ? concursoAtual[posicao]?.resultado.sort((a, b) => +a - b).toString().replaceAll(",", ", ") : "Aguardando"} </h2>
+            </div>
+            <><div className='centroDIV'>
             {
-
+                
                 concursoAtual[posicao]?.jogos.map(concurso => {
                     return (
 
                         <>
 
-                            <div key={c} className={`${concurso?.numeros.sort((a, b) => a - b).filter(r => concursoAtual[posicao]?.resultado.includes(+r)).length >= 11 ? "acerto tabela" : "tabela"}`}>
+                            <div key={c} className={` ${concurso?.numeros.sort((a, b) => a - b).filter(r => concursoAtual[posicao]?.resultado.includes(+r)).length >= 11 ? "acerto tabela" : "tabela"}`}>
 
                                 <h3>Jogo: {c += 1} </h3>
                                 <ul className="escolhe-numero-lotofacil">
@@ -139,8 +142,9 @@ function Numeros() {
                             </div></>
                     )
                 })
+                
             }
-
+            </div></>
         </>
     )
 }
