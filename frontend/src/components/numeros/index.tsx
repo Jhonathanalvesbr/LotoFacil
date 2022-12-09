@@ -12,6 +12,15 @@ function Numeros() {
 
     let c = 0;
 
+    const formatter = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+      
+        // These options are needed to round to whole numbers if that's what you want.
+        //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+        //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+      });
+
     useEffect(() => {
         axios.defaults.baseURL = 'https://xfxhnia2oc.execute-api.us-east-1.amazonaws.com/';
         axios.get("api")
@@ -53,7 +62,7 @@ function Numeros() {
             </>
             </div>
         </div>
-        <><h3>Premio: R$ {concursoAtual[posicao]?.valor > 0 ? concursoAtual[posicao]['valor']+",00 Reais." : "0,00 Reais."}</h3></>
+        <><h3>Premio: {concursoAtual[posicao]?.valor > 0 ? formatter.format(concursoAtual[posicao]['valor'])+" Reais." : formatter.format(0)+" Reais."}</h3></>
             <h2>Dezenas Sorteadas: {(concursoAtual[posicao]?.resultado.length > 0) ? concursoAtual[posicao]?.resultado.sort((a, b) => +a - b).toString().replaceAll(",", ", ") : "Aguardando"} </h2>
             
             <><div className='centroDIV'>
