@@ -9,6 +9,7 @@ function Numeros() {
 
     const [concursoAtual, setConcurso] = useState<Concurso[]>([]);
     const [posicao, setPosicao] = useState<number>(0);
+
     let c = 0;
 
     useEffect(() => {
@@ -16,9 +17,18 @@ function Numeros() {
         axios.get("api")
             .then(r => {
                 for (var i = 0; i < r.data.length; i++) {
+                    let resultado = 0
                     for (var j = 0; j < r.data[i].jogos.length; j++) {
                         r.data[i].jogos[j]['score'] = r.data[i].jogos[j].numeros.sort((a: any, b: any) => a - b).filter((n: any) => r.data[i].resultado.includes(+n)).length;
+                        if(r.data[i].jogos[j]['score'] == 11)
+                            resultado += 5
+                        if(r.data[i].jogos[j]['score'] == 12)
+                            resultado += 10
+                        if(r.data[i].jogos[j]['score'] == 13)
+                            resultado += 25
                     }
+                    r.data[i]['valor'] = resultado
+                    console.log(r.data[i]['valor'])
                     r.data[i].jogos.sort(function (a: any, b: any) {
                         return b.score - a.score
                     });
@@ -33,16 +43,19 @@ function Numeros() {
 
     }, []);
 
+
     return (
-        <><div className=''>
+        <><div className='centroMENU'>
             <div className='menu '> <h3 className='centro'>Concurso: 
             <Botao concursos={concursoAtual} posicao={[posicao, setPosicao]} />
         </h3><>
-                <h3 className='centro'>Acertos: {concursoAtual[posicao]?.resultado.length > 0 ? concursoAtual[posicao]?.jogos?.filter((j: any) => j['score'] > 10).length : "Aguardando"}</h3>
+                <h3 className='centro'>Acertos: {concursoAtual[posicao]?.resultado.length > 0 ? (concursoAtual[posicao]?.jogos?.filter((j: any) => j['score'] > 10).length) : "Aguardando"}</h3>
             </>
-        </div>
-            <h2>Dezenas Sorteadas: {(concursoAtual[posicao]?.resultado.length > 0) ? concursoAtual[posicao]?.resultado.sort((a, b) => +a - b).toString().replaceAll(",", ", ") : "Aguardando"} </h2>
             </div>
+        </div>
+        <><h3>Premio: R$ {concursoAtual[posicao]?.valor > 0 ? concursoAtual[posicao]['valor']+",00 Reais." : "0,00 Reais."}</h3></>
+            <h2>Dezenas Sorteadas: {(concursoAtual[posicao]?.resultado.length > 0) ? concursoAtual[posicao]?.resultado.sort((a, b) => +a - b).toString().replaceAll(",", ", ") : "Aguardando"} </h2>
+            
             <><div className='centroDIV'>
             {
                 

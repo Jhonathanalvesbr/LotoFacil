@@ -4,4 +4,5 @@ export type Concurso = {
     concurso: number;
     resultado:number[];
     jogos: Jogos[];
+    valor: number;
 }

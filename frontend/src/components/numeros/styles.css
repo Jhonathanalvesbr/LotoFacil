@@ -113,7 +113,7 @@ ul li button.acertou {
     justify-content: space-between;
     padding-right: 3rem;
     justify-items: center;
-
+    width: 100%;
 
 }
 
@@ -134,3 +134,4 @@ ul li button.aguardando {
     justify-content: center;
     align-items: center;
 }
+
