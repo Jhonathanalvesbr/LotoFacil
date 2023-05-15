@@ -22,8 +22,8 @@ function Numeros() {
     });
 
     useEffect(() => {
-        axios.defaults.baseURL = 'https://4qcf0tsa9l.execute-api.us-east-1.amazonaws.com/run';
-        axios.get("api")
+        axios.defaults.baseURL = 'https://4qcf0tsa9l.execute-api.us-east-1.amazonaws.com/';
+        axios.get("run")
             .then(r => {
                 for (var i = 0; i < r.data.length; i++) {
                     let resultado = 0
