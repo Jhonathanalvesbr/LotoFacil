@@ -30,9 +30,9 @@ function Numeros() {
                     for (var j = 0; j < r.data[i].jogos.length; j++) {
                         r.data[i].jogos[j]['score'] = r.data[i].jogos[j].numeros.sort((a: any, b: any) => a - b).filter((n: any) => r.data[i].resultado.includes(+n)).length;
                         if (r.data[i].jogos[j]['score'] == 11)
-                            resultado += 5
+                            resultado += 6
                         if (r.data[i].jogos[j]['score'] == 12)
-                            resultado += 10
+                            resultado += 12
                         if (r.data[i].jogos[j]['score'] == 13)
                             resultado += 25
                     }
