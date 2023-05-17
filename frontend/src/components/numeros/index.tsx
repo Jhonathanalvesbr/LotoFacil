@@ -22,7 +22,7 @@ function Numeros() {
     });
 
     useEffect(() => {
-        axios.defaults.baseURL = 'https://jk03cyy7kk.execute-api.us-east-1.amazonaws.com/';
+        axios.defaults.baseURL = 'https://2uog9jnyt6.execute-api.us-east-1.amazonaws.com/';
         axios.get("run")
             .then(r => {
                 for (var i = 0; i < r.data.length; i++) {
