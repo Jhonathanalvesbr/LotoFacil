@@ -22,8 +22,8 @@ function Numeros() {
     });
 
     useEffect(() => {
-        axios.defaults.baseURL = 'https://2uog9jnyt6.execute-api.us-east-1.amazonaws.com/';
-        axios.get("run")
+        axios.defaults.baseURL = 'http://ec2-44-212-25-239.compute-1.amazonaws.com:8080/api/v1/';
+        axios.get("lotofacil")
             .then(r => {
                 for (var i = 0; i < r.data.length; i++) {
                     let resultado = 0
