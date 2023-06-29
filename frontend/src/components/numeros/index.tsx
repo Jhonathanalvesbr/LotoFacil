@@ -34,7 +34,7 @@ function Numeros() {
                         if (r.data[i].jogos[j]['score'] == 12)
                             resultado += 12
                         if (r.data[i].jogos[j]['score'] == 13)
-                            resultado += 25
+                            resultado += 30
                     }
                     r.data[i]['valor'] = resultado
                     console.log(r.data[i]['valor'])
